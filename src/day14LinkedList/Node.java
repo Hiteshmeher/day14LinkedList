@@ -10,8 +10,7 @@ public class Node {
 	Node next;
 /**
  * 
- * @param data initialize variables
- * 
+ * @param data
  */
 	Node(int data) {
 		this.data = data;
