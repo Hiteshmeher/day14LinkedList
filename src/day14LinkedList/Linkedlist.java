@@ -77,22 +77,27 @@ public class Linkedlist<T> {
 //		prevNode.next = newNode;
 //		newNode.next = tempNode;
 //	}
-		
-//		 public void insertAfter(int prev_node, int new_data) {
-//			    if (prev_node == null) {
-//			      System.out.println("The given previous node cannot be null");
-//			      return;
-//			    }
-//			    Node new_node = new Node(new_data);
-//			    new_node.next = prev_node.next;
-//			    prev_node.next = new_node;
-//			  }
 
-	public void pop(int data) {
+
+
+	public Object pop(int data) {
 		/**
-		 * deleting head data
+		 * finding second last node as temp
+		 * and temp.next means the last node defined as null
+		 * 
 		 */
-		this.head = this.head.next;
+		if (head == null) {
+			return null;
+		}
+		if (head.next == null) {
+			return null;
+		}
+		Node temp = head;
+		while (temp.next.next != null)
+			temp = temp.next;
+
+		temp.next = null;
+
+		return head;
 	}
-	
 }
