@@ -11,6 +11,7 @@ public class Node {
 /**
  * 
  * @param data initialize variables
+ * 
  */
 	Node(int data) {
 		this.data = data;

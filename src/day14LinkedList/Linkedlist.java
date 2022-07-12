@@ -30,15 +30,15 @@ public class Linkedlist {
 		}
 	}
 
-	public void addNodeAtFirst(int data) {
-		Node newNode = new Node(data);
-		if (head == null) {
-			head = newNode;
-			tail = newNode;
-		} else
-			newNode.next = head;
-		    head = newNode;
-	}
+//	public void addNodeAtFirst(int data) {
+//		Node newNode = new Node(data);
+//		if (head == null) {
+//			head = newNode;
+//			tail = newNode;
+//		} else
+//			newNode.next = head;
+//		    head = newNode;
+//	}
 
 	public void display() {
 		/**
@@ -49,7 +49,9 @@ public class Linkedlist {
 			System.out.print(temp.data + " -> ");
 			temp = temp.next;
 		}
+		System.out.println("\n");
 	}
+
 //	public void push(int data) {
 //		/**
 //		 * adding values
@@ -64,4 +66,10 @@ public class Linkedlist {
 //            head = newNode;
 //        }
 //    }
+	public void pop(int data) {
+		/**
+		 * deleting head data
+		 */
+		this.head = this.head.next;
+	}
 }
