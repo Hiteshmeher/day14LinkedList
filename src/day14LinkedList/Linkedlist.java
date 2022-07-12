@@ -1,4 +1,5 @@
 package day14LinkedList;
+
 /**
  * 
  * @author LENOVO
@@ -8,6 +9,7 @@ public class Linkedlist {
 
 	Node head;
 	Node tail;
+
 	/**
 	 * 
 	 * @param data
@@ -15,8 +17,8 @@ public class Linkedlist {
 
 	public void add(int data) {
 		/**
-		 * checkinh wheather linkedlist is empty or not
-		 * if empty creating new node (adding)
+		 * checkinh wheather linkedlist is empty or not if empty creating new node
+		 * (adding)
 		 */
 		Node newNode = new Node(data);
 		if (head == null) {
@@ -26,6 +28,16 @@ public class Linkedlist {
 			tail.next = newNode;
 			tail = newNode;
 		}
+	}
+
+	public void addNodeAtFirst(int data) {
+		Node newNode = new Node(data);
+		if (head == null) {
+			head = newNode;
+			tail = newNode;
+		} else
+			newNode.next = head;
+		    head = newNode;
 	}
 
 	public void display() {
@@ -38,4 +50,18 @@ public class Linkedlist {
 			temp = temp.next;
 		}
 	}
+//	public void push(int data) {
+//		/**
+//		 * adding values
+//		 */
+//        Node newNode = new Node(data);
+//        if (head == null){
+//            head = newNode;
+//            tail = newNode;
+//        }
+//        else {
+//            newNode.next = head;
+//            head = newNode;
+//        }
+//    }
 }
