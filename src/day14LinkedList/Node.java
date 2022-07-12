@@ -10,7 +10,7 @@ public class Node {
 	Node next;
 /**
  * 
- * @param data
+ * @param
  */
 	Node(int data) {
 		this.data = data;
