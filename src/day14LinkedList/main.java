@@ -20,12 +20,11 @@ public class main {
 		 */
 		Linkedlist<Object> list = new Linkedlist<Object>();
 		list.add(56);
-		list.add(30);
-		list.add(70);
-		list.add(30);
-		list.add(20);
-		list.add(30);
-		list.display();
-		list.search(30);
+        list.add(30);
+        list.add(70);
+        list.display();
+        list.addAfter(30, 40);
+        list.display();
+
 	}
 }
