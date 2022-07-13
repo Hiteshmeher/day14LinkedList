@@ -21,10 +21,10 @@ public class main {
 		Linkedlist<Object> list = new Linkedlist<Object>();
 		list.add(56);
         list.add(30);
+        list.add(40);
         list.add(70);
         list.display();
-        list.addAfter(30, 40);
+        list.sortList();
         list.display();
-
 	}
 }
