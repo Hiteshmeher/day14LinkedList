@@ -17,7 +17,7 @@ public class Linkedlist<T> {
 	 * @return 
 	 */
 
-	public Linkedlist add(int data) {
+	public Linkedlist<?> add(int data) {
 		/**
 		 * checkinh wheather linkedlist is empty or not if empty creating new node
 		 * (adding)
@@ -33,15 +33,6 @@ public class Linkedlist<T> {
 		return null;
 	}
 
-//	public void addNodeAtFirst(int data) {
-//		Node newNode = new Node(data);
-//		if (head == null) {
-//			head = newNode;
-//			tail = newNode;
-//		} else
-//			newNode.next = head;
-//		    head = newNode;
-//	}
 
 	public void display() {
 		/**
@@ -55,20 +46,7 @@ public class Linkedlist<T> {
 		System.out.println("\n");
 	}
 
-//	public void push(int data) {
-//		/**
-//		 * adding values
-//		 */
-//        Node newNode = new Node(data);
-//        if (head == null){
-//            head = newNode;
-//            tail = newNode;
-//        }
-//        else {
-//            newNode.next = head;
-//            head = newNode;
-//        }
-//    }
+
 	 public Node searchInsert(int value, Node newNode) {
 		 Node tempNode = head;
 		 if(head == null) {
@@ -101,13 +79,35 @@ public class Linkedlist<T> {
 //		}
 //		return null;
 //	}
+	 
+	 public void deleteANode(int value) {
+		 /**
+		  * deleting a data
+		  */
+		 if(this.head == null) {
+			 System.out.println("Sorry no data !!!");
+			 return;
+		 }
+		Node tempNode = head;
+		while(tempNode.next.data != value) {
+			tempNode = tempNode.next;
+		}
+		Node prvNode = tempNode;
+		Node nextNode = tempNode.next.next;
+		prvNode.next = nextNode;
+	 }
 	
-	public Node addAfter(int prevNodeData, int data) {
-		Linkedlist linklist= add(data);
-		 Node newNode =new Node(40);
-		Node prvNode =searchInsert(30, newNode);
-		System.out.print("Newly Added data in List : ");
-		return newNode;
-	}
+	 public int size() {
+			/**
+			 * size of the linkedlist
+			 */
+			Node temp = head;
+			int count = 0;
+			while (temp != null) {
+				temp = temp.next;
+				count++;
+			}
+			return count;
+		}
     
 }
